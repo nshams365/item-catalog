@@ -10,9 +10,9 @@ Base = declarative_base()
 
 
 
-class Catagory(Base):
+class Category(Base):
 
-    __tablename__ = 'catagory'
+    __tablename__ = 'category'
 
     id = Column(Integer, primary_key = True)
     name = Column(String(80), nullable = False)
@@ -22,20 +22,12 @@ class Title(Base):
 
     __tablename__ = 'title'
 
-    name = Column(String(80), nullable =False)
     id = Column(Integer, primary_key = True)
-    author_name = Column(String(250))
-    price = Column(String(8))
-    catagory_id = Column(Integer, ForeignKey('catagory.id'))
-    catagory = relationship(Catagory)
-
-class Audit_trail(Base):
-
-    __tablename__ = 'audit_trail'
-
-    op_time = Column(DateTime, default=func.now())
-    title_id = Column(Integer, ForeignKey('title.id'))
-    title = relationship(Title)
+    name = Column(String(80), nullable =False)
+    author_name = Column(String(70))
+    description = Column(String(255))
+    category_id = Column(Integer, ForeignKey('category.id'))
+    category = relationship(Category)
 
 
 engine = create_engine('sqlite:///catalog.db')
