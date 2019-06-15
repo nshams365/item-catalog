@@ -1,11 +1,20 @@
-<html>
-	<!doctype html>
-	<body>
- 		<h1>Books Category</h1>
+{% extends "content_col_1.html" %}
+{% block title %}Library Catalog{% endblock %}
+
+{% block pageContent %}
+
+    <div class="col-md-12">
+        
+        <h2>Books Category</h2>
  		{% for category in categories %}
 
  		<p>{{category.name}}</p>
 
  		{% endfor %}
-	</body>
-</html>
+    </div>
+{% endblock %}
+
+
+
+
+ 		
