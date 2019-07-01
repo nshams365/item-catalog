@@ -1,0 +1,35 @@
+{% extends "content_col_1.html" %}
+{% block title %}:: Library Catalog ::{% endblock %}
+
+{% block pageContent %}
+
+    <div class="col-md-12">
+    	<div class="col-md-4">
+        	<h1>Categories</h1>
+                 {% for c in categories %}
+
+                    <a href="{{url_for('showCategoryBooks', category_name = c.cat_name,)}}">
+                    <h5>{{ c.cat_name }}</h5>
+            
+                 </a>
+
+                 {% endfor %}
+        </div>
+
+<div class="col-md-4">
+            <h1>Latest Books</h1>
+            {% for t in titles  %}
+
+            
+                <h5>{{ t.t_name }} ({{ t.category.cat_name }})</h5>
+           
+
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+
+
+
+
+ 		

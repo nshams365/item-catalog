@@ -1,0 +1,27 @@
+{% extends "content_col_1.html" %}
+{% block title %}:: Library Catalog : Books ::{% endblock %}
+
+{% block pageContent %}
+
+    <div class="col-md-12">
+    	<div class="col-md-4">
+        	<h1>Category</h1>
+            <h5>{{ category }}</h5>
+        </div>
+
+        <div class="col-md-4">
+        	<h1>All Books</h1>
+            {% for t in titles  %}
+
+            
+            	
+                <h5>{{ t.t_name }}</h5>
+            
+
+            {% endfor %}
+            
+            
+        </div>
+                
+    </div>
+{% endblock %}
